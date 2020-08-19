@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <section id="inputSelectImagens">
+            <input type="text" v-model="textoDigitado" />
+            <br>
+            <div v-if="textoDigitado == 1">
+                <a v-bind:href="url"><img v-bind:src="srcImg1" v-bind:title="titleImg1" width="100px"></a>
+            </div>
+            <div v-else-if="textoDigitado == 2">
+                <a v-bind:href="url"><img v-bind:src="srcImg2" v-bind:title="titleImg2" width="100px"></a>
+            </div>
+            <div v-else-if="textoDigitado == 3">
+                <a v-bind:href="url"><img v-bind:src="srcImg3" v-bind:title="titleImg3" width="100px"></a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                textoDigitado: '',
+                srcImg1: 'img/logo1.png',
+                srcImg2: 'img/logo2.png',
+                srcImg3: 'img/logo3.png',
+                titleImg1: 'Logo VUE 1',
+                titleImg2: 'Logo VUE 2',
+                titleImg3: 'Logo VUE 3',
+                url: 'http://vuejs.org'
+            },
+        })
+    </script>
+</body>
+
+</html>
